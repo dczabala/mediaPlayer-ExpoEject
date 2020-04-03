@@ -6,6 +6,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 
 
 export default class App extends React.Component {
+    
     state = {
         trackLength: 300,
         timeElapsed: "0:00",
@@ -21,8 +22,8 @@ export default class App extends React.Component {
         return (
             <SafeAreaView style={styles.container}>
                 <View style={{ alignItems: "center" }}>
-                  {/* Playlist name marginTop: 40 for mobile*/}
-                    <View style={{ alignItems: "center", marginTop: 150 }}>
+                  {/* Playlist name marginTop: 150 for desktop*/}
+                    <View style={{ alignItems: "center", marginTop: 40 }}>
                         <Text style={[styles.textLight]}>PLAYLIST NAME</Text>
                     </View>
                     {/* Book Cover picture */}
@@ -59,7 +60,7 @@ export default class App extends React.Component {
                         <FontAwesome5 name="backward" size={32} color="#787878"></FontAwesome5>
                     </TouchableOpacity>
 
-                    {/* Play button */}
+                    {/* Play button*/}
                     <TouchableOpacity style={styles.playButtonContainer}>
                         <FontAwesome5
                             name="play"
@@ -67,7 +68,15 @@ export default class App extends React.Component {
                             color="#48484A"
                             style={{ marginLeft: 8 }}
                         ></FontAwesome5>
-                    </TouchableOpacity>
+                    </TouchableOpacity> 
+                     {/* Pause button 
+                     <TouchableOpacity style={styles.playButtonContainer}>
+                        <FontAwesome5
+                            name="pause"
+                            size={32}
+                            color="#48484A"
+                        ></FontAwesome5>
+                    </TouchableOpacity>*/}
 
                   {/* Next button */}
                     <TouchableOpacity>
@@ -108,9 +117,9 @@ const styles = StyleSheet.create({
         height: 250
     },
     track: {
-        /*for mobile
-        width: 350,*/
-        width: 800,
+        /*for desktop
+        width: 800*/
+        width: 350,
         height: 5,
         borderRadius: 2,
         backgroundColor: "#D9D9D9"
@@ -135,15 +144,5 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginHorizontal: 32,
     }
-  /*  pauseButtonContainer: {
-        backgroundColor: "#F2F2F2",
-        borderColor: "#DEDEDE",
-        borderWidth: 16,
-        width: 128,
-        height: 128,
-        borderRadius: 64,
-        alignItems: "center",
-        justifyContent: "center",
-        marginHorizontal: 32,
-    }*/
+ 
 });
